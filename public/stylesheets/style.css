@@ -12,3 +12,11 @@ a {
 .page-number {
   text-align: center;
 }
+
+.prev-page {
+  float: left;
+}
+
+.next-page {
+  float: right;
+}

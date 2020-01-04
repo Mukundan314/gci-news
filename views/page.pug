@@ -1,7 +1,11 @@
 extends layout
 
 block content
+  a(class="prev-page", href=`/page/${page - 1}`) Prev Page
+  a(class="next-page", href=`/page/${page + 1}`) Next Page
+
   p(class="page-number") Page #{page}
+
   br
   each article in articles
     div
@@ -12,4 +16,8 @@ block content
       p= article.description
     br
   br
+
   p(class="page-number") Page #{page}
+
+  a(class="prev-page", href=`/page/${page - 1}`) Prev Page
+  a(class="next-page", href=`/page/${page + 1}`) Next Page

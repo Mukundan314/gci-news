@@ -1,3 +1,4 @@
+const createError = require('http-errors');
 const express = require('express');
 const NewsAPI = require('newsapi');
 
@@ -18,9 +19,9 @@ async function getArticles(page) {
 /* GET home page. */
 router.get('/:page', function(req, res, next) {
   getArticles(req.params.page).then(articles => {
-    res.render('page', { articles, page: req.params.page })
+    res.render('page', { articles, page: parseInt(req.params.page) })
   }).catch((err) => {
-    res.send(req.params.page);
+    next(createError(500));
   });
 });
 
