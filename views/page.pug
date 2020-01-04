@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  each article in articles
+    div
+      a(href=article.url)
+        h3= article.title
+      p Published at 
+        em= article.publishedAt
+      p= article.description
+    br
